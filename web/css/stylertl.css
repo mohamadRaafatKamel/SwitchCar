@@ -1,0 +1,20 @@
+.ht-header,.ht-footer,.mv-item-infor,.topbar-filter,.sidebar,
+.movie-single-ct{
+    direction: rtl;
+}
+.ft-copyright p{
+    width: 100%;
+    text-align: center;
+}
+
+
+
+
+@media (max-width: 991px) {
+    .ht-header{
+        direction: ltr;
+    }
+    .navbar-collapse ul{
+        direction: rtl;
+    }
+}
