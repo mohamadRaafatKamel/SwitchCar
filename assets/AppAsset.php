@@ -76,7 +76,7 @@ class AppAsset extends AssetBundle
         'css/stylertl.css',
     ];
     public $js = [
-        'js/jquery.js',
+//        'js/jquery.js',
         'js/plugins.js',
         'js/plugins2.js',
         'js/custom.js',
