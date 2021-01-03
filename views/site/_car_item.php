@@ -12,25 +12,19 @@ use app\components\MyStrings;
     //print_r( $img );//die();
 ?>
 
-<div class="col-md-4">
-    <a href="<?= Url::to(['viewcar', 'id' => $model->cid]); ?>">
-        <div class="product-item">
-            <div class="product-thumb">
-                <img class="img-responsive" src="<?= $cover  ?>" alt="product-img" />
-                <div class="preview-meta">
-                    <ul>
-                        <li>
-                            <span  data-toggle="modal" data-target="#product-modal">
-                                    <i class="tf-ion-ios-search-strong"></i>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="product-content">
-                <h4><?= $model->cname ?></h4>
-
-            </div>
-        </div>
-    </a>
+<!--start-->
+<div class="movie-item-style-2">
+    <img src="<?= $cover  ?>" alt="">
+    <div class="mv-item-infor">
+        <h6><a href="<?= Url::to(['viewcar', 'id' => $model->cid]); ?>"> <?= $model->cname ?></a></h6>
+        <p class="describe"><?= $model->descrp ?></p>
+        <p class="run-time">
+            <span>اللون : احمر </span>     .
+            <span>العجل : 4 </span>    .
+            <span>الموديل : 5252</span>
+        </p>
+        <p> المكان : <a href="#">الرياض</a></p>
+    </div>
 </div>
+<!--end-->
+

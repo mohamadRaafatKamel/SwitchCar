@@ -86,7 +86,7 @@ AppAsset::register($this);
                         <li class="btn signupLink0"><a href="<?= Url::toRoute(['/registration']) ?>">حساب جديد</a></li>
                     <?php else : ?>
                         <li class="dropdown first">
-                            <a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown">
+                            <a class="btn dropdown-toggle lv1" data-toggle="dropdown">
 
 <!--                                <i class="fa fa-angle-down" aria-hidden="true"></i>-->
                                 <?= Yii::$app->user->identity->username ?> <i class="tf-ion-android-person"></i>
@@ -123,7 +123,7 @@ AppAsset::register($this);
 
 <div class="hero common-hero" style="background: url('<?= Url::toRoute(['images/user-hero-bg.jpg']) ?>') no-repeat;"></div>
 
-<div class="page-single movie_list">
+<div class="page-single movie_list" style="min-height: 500px">
     <div class="container">
         <div class="row ipad-width2">
             <?= Breadcrumbs::widget([

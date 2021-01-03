@@ -188,7 +188,7 @@ class Car extends \yii\db\ActiveRecord
         if($filter['owner']!=' '){
             $query->andFilterWhere([ '=' , 'uid',$filter['owner'] ]);
         } else {
-            $query->andFilterWhere([ '!=' , 'uid',Yii::$app->user->identity->uid ]);
+            $query->andFilterWhere(['uid' => $this->uid]);
         }
         
         

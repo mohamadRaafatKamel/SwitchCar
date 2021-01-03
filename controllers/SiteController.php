@@ -63,15 +63,24 @@ class SiteController extends Controller
 
     /**
      * Displays homepage.
-     *
-     * @return string
+     * see all cars
+     * @return array of cars
      */
     public function actionIndex()
     {
         //$this->checkUsers();
-        $model = new Users();
-        
-        return $this->render('index');
+        $car = new Car();
+
+        $carFilter=[
+            'cstat'=> [0,1],
+            'owner'=> ' ',
+            'group'=>'0',
+        ];
+        $carList = $car->getCar(Yii::$app->request->get(), $carFilter);
+
+        return $this->render('index',[
+            'carList' => $carList,
+        ]);
     }
     
     /**
@@ -447,17 +456,10 @@ class SiteController extends Controller
         ]);
     }
     
-    
     public function actionAllcars()
     {
-        //$this->checkUsers();
+        $this->checkUsers();
         $model = new Users();
-        if (Yii::$app->user->isGuest) {
-            return $this->redirect(['login']);
-        }
-        if($model->carCount == 0){
-            return $this->redirect(['addcar']);
-        }
         //End Check user
         $car = new Car();
         
