@@ -50,7 +50,9 @@ AppAsset::register($this);
                         <span></span>
                     </div>
                 </div>
-                <a href="<?= Url::toRoute(['/']) ?>"><img class="logo" src="images/logo1.png" alt="" width="119" height="58"></a>
+                <a href="<?= Url::toRoute(['/']) ?>">
+                    <img class="logo" src="<?= Url::toRoute(['images/logo1.png']) ?>" alt="" width="119" height="58">
+                </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse flex-parent" id="bs-example-navbar-collapse-1">
@@ -60,16 +62,14 @@ AppAsset::register($this);
                     </li>
                     <li><a href="<?= Url::toRoute(['/']) ?>">الرئيسية</a></li>
                     <li><a href="<?= Url::toRoute(['/dealcars']) ?>">صفقات جاهزه</a></li>
-                    <li class="dropdown">
-                        <a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown">
+                    <li class="dropdown first">
+                        <a class="btn dropdown-toggle lv1" data-toggle="dropdown">
                             رسائل
-                            <i class="fa fa-angle-down" aria-hidden="true"></i>
-
                         </a>
                         <ul class="dropdown-menu level1">
-                            <li><a href="#">خيار</a></li>
-                            <li><a href="#">خيار</a></li>
-                            <li><a href="#">خيار</a></li>
+                            <li><a href="#">رسائل خاصة</a></li>
+                            <li><a href="#">رسائل جماعية</a></li>
+                            <li><a href="#">رسائل الاداره</a></li>
                         </ul>
                     </li>
                     <?php if(! Yii::$app->user->isGuest ){ ?>
@@ -121,18 +121,20 @@ AppAsset::register($this);
 </header>
 <!-- END | Header -->
 
-<div class="hero common-hero"></div>
+<div class="hero common-hero" style="background: url('<?= Url::toRoute(['images/user-hero-bg.jpg']) ?>') no-repeat;"></div>
 
-
-<div class="wrap">
-    <div class="container main-container">
-        <?= Breadcrumbs::widget([
-           // 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= Alert::widget() ?>
-        <?= $content ?>
+<div class="page-single movie_list">
+    <div class="container">
+        <div class="row ipad-width2">
+            <?= Breadcrumbs::widget([
+                // 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+            ]) ?>
+            <?= Alert::widget() ?>
+            <?= $content ?>
+        </div>
     </div>
 </div>
+
 <!--
 <footer class="footer">
     <div class="container">
@@ -143,12 +145,18 @@ AppAsset::register($this);
 </footer>-->
 
 <!-- footer section-->
-<footer class="ht-footer">
+<footer class="ht-footer" style="background: url('<?= Url::toRoute(['images/user-hero-bg.jpg']) ?>') no-repeat;">
     <div class="container">
-        <div class="row">
-            <div class="col-3">الاشعارات</div>
-            <div class="col-6">اضف سيارة</div>
-            <div class="col-3">المفضل</div>
+        <div class="flex-parent-ft">
+            <div class="flex-child-ft item1">
+                الاشعارات
+            </div>
+            <div class="flex-child-ft item1">
+                اضف سيارة
+            </div>
+            <div class="flex-child-ft item1">
+                المفضل
+            </div>
         </div>
     </div>
     <div class="ft-copyright">
